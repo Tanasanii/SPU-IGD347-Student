@@ -7,7 +7,6 @@ public class Player : Character
     public Transform RightHand;
     public Transform LeftHand;
     public List<Item> inventory = new List<Item>();
-    public List<Quest> quests = new List<Quest>();
 
     Vector3 _inputDirection;
     bool _isAttacking = false;
@@ -34,12 +33,7 @@ public class Player : Character
     public void AddItem(Item item) {
         inventory.Add(item);
     }
-    public void AddQuest(Quest quest) { 
-        quests.Add(quest);
-    }
-    public void RemoveQuest(Quest quest) { 
-        quests.Remove(quest);
-    }
+   
 
     private void HandleInput()
     {
@@ -59,7 +53,8 @@ public class Player : Character
     public void Attack(bool isAttacking) {
         if (isAttacking) {
             animator.SetTrigger("Attack");
-            var e = InFront as Idestoryable;
+            //edit to Idestoryable
+            var e = InFront as Enemy;
             if (e != null)
             {
                 e.TakeDamage(Damage);

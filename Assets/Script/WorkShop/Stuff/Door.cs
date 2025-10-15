@@ -17,18 +17,14 @@ public class Door : Stuff
 
     public void Interact(Player player)
     {
-       
 
-        isOpen = !isOpen;
     }
 
     private IEnumerator SlideDoor(Vector3 targetPosition)
     {
-        Vector3 startPosition = door.position;
-        float timeElapsed = 0;
+
 
         yield return null;
-        door.position = targetPosition;
     }
 
 }
